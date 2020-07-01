@@ -1,0 +1,31 @@
+.about {
+    
+    height: 100vw;
+    margin-top: 25vh;
+    width: 100%;
+    padding: 150px 100px 0 100px ;
+    text-align: inline-start;
+
+    span {
+        font-family: roboto-mono;
+    }
+
+    h3 {
+
+
+        &::after {
+        content: "";
+        display: inline-block;
+        max-width: 300px;
+        height: 1px;
+        margin: 5px 15px;
+        background-color: transparentize($clr3, 0.7);
+        }
+    }
+
+    img {
+        max-width: 300px;
+    }
+
+    
+}

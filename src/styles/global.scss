@@ -1,0 +1,24 @@
+// Setup
+@import "setup/variables.scss";
+@import "setup/functions.scss";
+@import "setup/mixins.scss";
+
+// @import "setup/typography.scss";
+@import "setup/typography.scss";
+
+// Basics
+@import "basics/helpers.scss";
+@import "basics/layout.scss";
+@import "basics/base.scss";
+@import "basics/links.scss";
+@import "basics/buttons.scss";
+
+// Components
+@import "cmps/navbar";
+@import "cmps/landing";
+@import "cmps/social";
+@import "cmps/mail";
+@import "cmps/about";
+
+// Pages
+@import "pages/home";

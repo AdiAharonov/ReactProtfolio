@@ -1,0 +1,28 @@
+.navbar {
+    background-color: $clr1;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+
+    .logo {
+        color: $clr3;
+        margin: 0;
+    }
+
+    .navbar-num {
+        color: $clr3;
+    }
+
+    .navbar-content-box {
+        
+        width: 600px;
+        display: flex;
+        justify-content: space-between;
+    }
+}

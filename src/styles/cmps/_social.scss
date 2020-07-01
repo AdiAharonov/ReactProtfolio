@@ -1,0 +1,28 @@
+.social {
+    width: 40px;
+    height: 200px;
+    position: fixed;
+    bottom: 0;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+
+    i {
+        margin: 10px auto;
+        cursor: pointer;
+        transition: all ease-out .3s;
+        &:hover {
+            transform: translateY(-5px);
+            color: $clr3;
+        }
+    }
+
+    &::after {
+        content: "";
+        width: 1px;
+        height: 100px;
+        margin: auto auto 0;
+        background-color: $clr2;
+    }
+
+}

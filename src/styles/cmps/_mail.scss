@@ -1,0 +1,31 @@
+.mail {
+    width: 40px;
+    height: 310px;
+    position: fixed;
+    bottom: 0;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+
+    div {
+        margin: 0;
+        display: flex;
+        
+        transform: rotate(90deg);
+        cursor: pointer;
+        transition: all ease-out .3s;
+
+        &:hover {
+            margin: -5px;
+            color: $clr3;
+        }
+    }
+
+    &::after {
+        content: "";
+        width: 1px;
+        height: 100px;
+        margin: auto auto 0;
+        background-color: $clr2;
+    }
+}
