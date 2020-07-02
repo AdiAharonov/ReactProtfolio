@@ -1,0 +1,58 @@
+.skills {
+    
+    width: 100%;
+    padding: 150px 100px 0 100px ;
+    text-align: inline-start;
+    position: relative;
+    margin-top: 25vh;
+
+    span {
+        font-family: roboto-mono;
+    }
+
+    h3 {
+
+
+        &::after {
+        content: "";
+        display: inline-block;
+        width: 300px;
+        height: 1px;
+        margin: 5px 15px;
+        background-color: transparentize($clr3, 0.7);
+        }
+    }
+
+    .skill-groups {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 50px;
+        justify-content: space-evenly;
+
+        .skill-group {
+            
+            h2 {
+                color: $clr4;
+                width: 100%;
+                text-align: center;
+            }
+            width: 20%;
+            min-width: 250px;
+            margin: 20px;
+            
+            .skill-container {
+                display: flex;
+                flex-wrap: wrap;
+                background-color: transparentize($clr2 , 0.6);
+                border-radius: 3px;
+
+                p {
+                    padding: 10px;
+                    color: $clr3;
+                }
+            }
+            
+        }
+    }
+}

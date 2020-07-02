@@ -1,5 +1,7 @@
 import React from 'react'
-import image from '../assets/images/formalImage.jpg'
+import  Card  from './Image';
+
+
 export  function About() {
     return (
         <div className="about">
@@ -7,7 +9,7 @@ export  function About() {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, accusamus. Neque vitae deserunt id cupiditate temporibus? Temporibus officiis adipisci facilis vel, saepe cum hic deleniti, non rem sed nostrum enim.
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, veritatis aperiam quod cupiditate quidem facilis sint iste quo non consequatur mollitia maxime eligendi obcaecati similique quis. Consequatur voluptatibus cumque doloribus.
             </p>
-            <img src={image} />
+            <Card />
         </div>
     )
 }

@@ -1,9 +1,9 @@
 import React from 'react'
-
+import Logo from '../assets/images/logo.svg'
 export function NavBar() {
     return (
         <nav className="navbar">
-          <h2 className="logo">Logo</h2> 
+          <img className="logo" src={Logo} /> 
 
         <div className="navbar-content-box">
             <button className="navbar-btn"><span className="navbar-num">01. </span>About</button>

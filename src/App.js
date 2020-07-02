@@ -4,6 +4,11 @@ import { LandingPage } from './cmps/LandingPage';
 import { Social } from './cmps/Social';
 import { Mail } from './cmps/Mail';
 import { About } from './cmps/About';
+import { Skills } from './cmps/Skills';
+import { Work } from './cmps/Work';
+import { Contact } from './cmps/Contact';
+import { Footer } from './cmps/Footer';
+
 
 function App() {
   return (
@@ -14,6 +19,12 @@ function App() {
      <Mail />
 
      <About />
+     <Skills />
+     <Work />
+     <Contact />
+     
+     <Footer />
+     
 
     </div>
   );
