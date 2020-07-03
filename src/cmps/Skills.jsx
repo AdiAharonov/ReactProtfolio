@@ -2,7 +2,7 @@ import React from 'react'
 
 export function Skills() {
     return (
-        <div className="skills">
+        <div className="skills" name="skills">
              <h3><span className="clr3">02. </span>Skills & Knowledge</h3>
              <section className="skill-groups">
              <div className="skill-group">

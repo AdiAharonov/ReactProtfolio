@@ -32,12 +32,12 @@
         max-width: 300px;
     }
 
-    @include for-normal-layout;
-
+    
     .card {
-        position: relative;
-        left: 70%;
-        padding: 15px;
+        position: absolute;
+        top: 200px;
+        right: 140px;
+        width: 350px;
     }
 
     

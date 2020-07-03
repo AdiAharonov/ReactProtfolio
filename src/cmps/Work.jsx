@@ -2,12 +2,25 @@ import React from 'react'
 
 export function Work() {
     return (
-        <div className="work">
+        <div className="work" name="work">
              <h3><span className="clr3">03. </span>Some Things I've Built</h3>
              <div className="proj start">
                  <div className="proj-info">
                  <h2>Venyou</h2>
-                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit ducimus explicabo maiores non voluptatibus recusandae, modi corporis suscipit fugiat aliquam iure esse repudiandae exercitationem, aut error provident pariatur, ipsum voluptates!</p>
+                 <p>Inspired by Meetup, a full-scale marketplace web application.
+based on MERN (MongoDB / Express / React / Node.js),
+includes: 
+<br/>
+-Sign in with Facebook/Google
+<br/>
+-Socket for live comments
+<br/>
+-Notification system
+<br/>
+-Google MAPS
+<br/>
+and many more features
+</p>
                  <div className="proj-tech">
                      <h4>MongoDB</h4>
                      <h4>Express.js</h4>

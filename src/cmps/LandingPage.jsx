@@ -8,9 +8,8 @@ export function LandingPage() {
       <h1 className="name">Adi Aharonov.</h1>
       <h1>I build things for the web.</h1>
       <p className="sentence">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam repudiandae
-        ut laborum cupiditate, alias quidem incidunt molestias illo minima
-        pariatur iusto reiciendis quas facilis consequuntur est soluta officiis.
+        I'm a Full-Stack web developer specializing in
+      building (and occasionally designing) exceptional websites, applications, and everything in between.
         I like to keep my code
 
         <Typical

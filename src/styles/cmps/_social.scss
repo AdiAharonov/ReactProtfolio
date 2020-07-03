@@ -17,6 +17,10 @@
         }
     }
 
+    a {
+        color: $clr2;
+    }
+
     &::after {
         content: "";
         width: 1px;

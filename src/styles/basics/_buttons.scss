@@ -8,6 +8,7 @@
     outline: none;
     transition: all ease-out .7s;
     outline: none;
+    margin: auto 0;
 
     &:hover {
         color: $clr3;
@@ -24,6 +25,7 @@
     font-family: roboto-mono;
     transition: all ease-in-out .2s;
     outline: none;
+    text-decoration: none;
 
     &:hover {
         background-color: transparentize($clr3, 0.9);
