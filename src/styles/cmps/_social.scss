@@ -29,4 +29,8 @@
         background-color: $clr2;
     }
 
+    @include for-narrow-layout {
+        display: none;
+    }
+
 }

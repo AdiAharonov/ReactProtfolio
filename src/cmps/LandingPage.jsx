@@ -2,6 +2,9 @@ import React from 'react';
 import Typical from 'react-typical';
 
 export function LandingPage() {
+  const onClick = () => {
+    window.location.href = `mailto:adi.ahronov@gmail.com`;
+}
   return (
     <div className="landing">
       <p className="opening">Hi, my name is</p>
@@ -19,7 +22,7 @@ export function LandingPage() {
       />
       </p>
       
-      <button className="resume-btn">Get In Touch</button>
+      <button onClick={onClick} className="resume-btn">Get In Touch</button>
     </div>
   );
 }
