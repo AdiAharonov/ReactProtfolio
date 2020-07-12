@@ -10,14 +10,14 @@ export const NavBar = () => {
   return (
     <nav className="navbar">
       <img className="logo" src={Logo} alt="" />
-
+{/* 
       <div className="hamburger">
         <input type="checkbox" onClick={toggle} />
 
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </div> */}
 
       <div className={isOpen ? 'navbar-content-box' : 'navbar-content-box close'} >
         <Link

@@ -15,6 +15,8 @@ export function Skills() {
                  <p>Angular</p>
                  <p>JavaScript</p>
                  <p>TypeScript</p>
+                 <p>HTML</p>
+                 <p>CSS</p>
              </div>
              </div>
              <div className="skill-group">
