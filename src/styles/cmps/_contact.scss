@@ -32,5 +32,11 @@
             margin: 50px auto;
         }
     }
+
+    @include for-narrow-layout {
+      padding: 100px 50px;
+      text-align: center;
+      margin: 0;
+    }
     
 }

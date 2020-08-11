@@ -1,23 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Logo from '../assets/images/logo.svg';
 import * as Scroll from 'react-scroll';
 import { Link, animateScroll as scroll } from 'react-scroll';
 
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [currentScrollHeight, setCurrentScrollHeight] = useState();
   const toggle = () => setIsOpen(!isOpen);
 
-  return (
-    <nav className="navbar">
-      <img className="logo" src={Logo} alt="" />
-{/* 
-      <div className="hamburger">
-        <input type="checkbox" onClick={toggle} />
+  useEffect(() => {
+    setCurrentScrollHeight(0);
 
-        <span></span>
-        <span></span>
-        <span></span>
-      </div> */}
+    window.onscroll = () => {
+      const newScrollHeight = Math.ceil(window.scrollY / 50) * 50;
+      if (currentScrollHeight !== newScrollHeight) {
+        setCurrentScrollHeight(newScrollHeight);
+      }
+    };
+  }, []);
+
+  const opacity = Math.min(currentScrollHeight / 100, 1);
+  const navBgc = `rgb(9, 22, 41,${opacity})`;
+  const border = `rgb(72, 80, 104,${opacity})`;
+  
+  return (
+    <div className="navbar"  style={{ backgroundColor: navBgc, borderBottom: `3px solid ${border}` }}>
+      <img className="logo" src={Logo} alt="" />
+
+      <div className={ !isOpen ? 'hamburger' : 'hamburger change'} onClick={toggle}>
+        
+        <div className="bar1"></div>
+        <div className="bar2"></div>
+        <div className="bar3"></div>
+      </div>
 
       <div className={isOpen ? 'navbar-content-box' : 'navbar-content-box close'} >
         <Link
@@ -64,6 +79,6 @@ export const NavBar = () => {
           Resume
         </a>
       </div>
-    </nav>
+    </div>
   );
 };

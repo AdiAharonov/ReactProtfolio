@@ -17,4 +17,8 @@
     .sentence {
         padding: 50px 0;
     }
+
+    @include for-narrow-layout {
+        padding:50px;
+      }
 }

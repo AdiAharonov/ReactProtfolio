@@ -40,12 +40,6 @@
     }
   }
 
-  .start {
-    flex-direction: row;
-  }
-  .end {
-    flex-direction: row-reverse;
-  }
 
   .proj {
     display: flex;
@@ -72,6 +66,37 @@
               padding: 0 20px;
           }
       }
+    }
+  }
+
+  @include for-narrow-layout {
+    padding: 100px 50px;
+    text-align: center;
+    margin: 0;
+
+    .proj {
+      display: flex;
+      flex-direction: column;
+
+      .proj-info {
+
+        p {
+          max-width: 100%;
+          text-align: left;
+        }
+
+        .proj-tech {
+          align-items: center;
+          justify-content: space-around;
+          padding: 30px 0;
+        }
+
+      }
+    }
+
+    a {
+      width: 100%;
+      display: block;
     }
   }
 }

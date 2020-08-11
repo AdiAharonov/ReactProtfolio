@@ -4,7 +4,7 @@ export function Work() {
     return (
         <div className="work" name="work">
              <h3><span className="clr3">03. </span>Some Things I've Built</h3>
-             <div className="proj start">
+             <div className="proj">
                  <div className="proj-info">
                  <h2>Venyou</h2>
                  <p>Inspired by Meetup, a full-scale marketplace web application.
@@ -30,8 +30,8 @@ and many more features
                  </div>
                  <a href="https://venyouformisterbit.herokuapp.com/"><div className="proj-image"></div></a>
              </div>
-             <div className="proj end"></div>
-             <div className="proj start"></div>
+             <div className="proj"></div>
+             <div className="proj"></div>
         </div>
     )
 }

@@ -34,7 +34,8 @@ export function Skills() {
              <div className="skill-container">
                 <p>Git</p>
                 <p>Unit Testing</p>
-                <p>MVC Model</p>
+                <p>MVC</p>
+                <p>Npm</p>
              </div>
              </div>
              </section>

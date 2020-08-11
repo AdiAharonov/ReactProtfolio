@@ -40,5 +40,19 @@
         width: 350px;
     }
 
+    @include for-narrow-layout {
+        padding: 100px 50px;
+        margin: 0;
+        text-align: center;
+        .card {
+            position: static;
+            margin: 50px auto;
+        }
+
+        p {
+            max-width: 100%;
+        }
+    }
+
     
 }
