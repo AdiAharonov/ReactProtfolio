@@ -8,22 +8,27 @@ import { Skills } from './cmps/Skills';
 import { Work } from './cmps/Work';
 import { Contact } from './cmps/Contact';
 import { Footer } from './cmps/Footer';
+import { CircuitAnimationCmp } from './cmps/StyledCmps/CircuitAnimationCmp';
 
 
 function App() {
   return (
-    <div className="home-page">
-     <NavBar />
-     <LandingPage />
-     <Social />
-     <Mail />
+    <div className="home-page" >
+     {/* <NavBar /> */}
+     <div className="bg-circuit-animation">
 
+     <CircuitAnimationCmp width={window.innerWidth * 3} />
+     </div>
+     <LandingPage />
      <About />
      <Skills />
      <Work />
      <Contact />
+     {/* <Social />
+     <Mail />
+
      
-     <Footer />
+     <Footer /> */}
      
 
     </div>

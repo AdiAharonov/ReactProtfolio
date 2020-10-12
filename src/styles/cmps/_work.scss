@@ -1,9 +1,8 @@
 .work {
-  width: 100%;
-  padding: 150px 100px 0 100px;
-  text-align: inline-start;
-  position: relative;
-  margin-top: 25vh;
+  position: absolute;
+  top: 100vh;
+  left: 200vw;
+  width: 100vw;
 
   span {
     font-family: roboto-mono;

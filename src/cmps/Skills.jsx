@@ -39,6 +39,7 @@ export function Skills() {
              </div>
              </div>
              </section>
+             <button onClick={() => window.scrollTo(window.innerWidth, window.innerHeight)} style={{position: 'absolute',top: '50%', left: '20%', width: '300px', zIndex: '9999'}}>To the mainframe</button>
         </div>
     )
 }

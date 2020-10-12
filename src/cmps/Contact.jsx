@@ -6,6 +6,7 @@ export function Contact() {
     }
     return (
         <div className="contact" name="contact">
+             <button onClick={() => window.scrollTo(window.innerWidth, window.innerHeight)} style={{position: 'absolute',top: '50%', left: '20%', width: '300px', zIndex: '9999'}}>To the mainframe</button>
              <h3><span className="clr3">04. </span>Get In Touch!</h3>
              <div className="contact-content">
              <p> Currently looking for any new opportunities, my inbox is always open.</p>

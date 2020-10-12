@@ -1,6 +1,52 @@
 body {
-    background-color: $clr1;
     font-family: noto-reg;
+    width: 300vw;
+    height: 300vh;
+    background-color: #0b022c;
+    z-index: 0;
+
+    .bg-circuit-animation {
+        
+            opacity: 0.15;
+            z-index: 1;
+            position: absolute;
+            top: 170vh;
+            left: 150vw;
+            
+            transform: translate(-50%, -50%);
+            
+        
+          .path {
+            animation: draw 20s infinite;
+            animation-timing-function: linear;
+          }
+          .path-01 {
+            animation-delay: 0s;
+          }
+          .path-02 {
+            animation-delay: 1s;
+          }
+          .path-03 {
+            animation-delay: 2s;
+          }
+          .path-04 {
+            animation-delay: 3s;
+          }
+          .path-05 {
+            animation-delay: 4s;
+          }
+          
+          
+          
+          @keyframes draw {
+            0% {
+            }
+            100% {
+              stroke-dashoffset: 0;
+              stroke-opacity: 1;
+            }
+          }
+    }
 }
 
 
