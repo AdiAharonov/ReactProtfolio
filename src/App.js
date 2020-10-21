@@ -9,16 +9,19 @@ import { Work } from './cmps/Work';
 import { Contact } from './cmps/Contact';
 import { Footer } from './cmps/Footer';
 import { CircuitAnimationCmp } from './cmps/StyledCmps/CircuitAnimationCmp';
+import { SpaceBgSvg } from './cmps/StyledCmps/SpaceBgSvg';
 
 
 function App() {
   return (
     <div className="home-page" >
      {/* <NavBar /> */}
-     <div className="bg-circuit-animation">
+     {/* <div className="bg-circuit-animation">
 
      <CircuitAnimationCmp width={window.innerWidth * 3} />
-     </div>
+     </div> */}
+     <SpaceBgSvg />
+    
      <LandingPage />
      <About />
      <Skills />
