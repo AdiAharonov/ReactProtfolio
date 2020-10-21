@@ -3,43 +3,38 @@ import React from 'react'
 export function Skills() {
     return (
         <div className="skills" name="skills">
-             <h3><span className="clr3">02. </span>Skills & Knowledge</h3>
+             <h2>What i can bring to the table?</h2>
              <section className="skill-groups">
              <div className="skill-group">
-             <h2>Front-end</h2>
+             <h2>Human Assets</h2>
              <div className="skill-container">
-                 <p>React / React Native</p>
-                 <p>Redux</p>
-                 <p>Mobx</p>
-                 <p>Vue / Vuex</p>
-                 <p>Angular</p>
-                 <p>JavaScript</p>
-                 <p>TypeScript</p>
-                 <p>HTML</p>
-                 <p>CSS</p>
+                 <p>Capability to learn any needed tech to solve a problem/find a solution</p>
+                 <p>Always looking where to improve</p>
+                 <p>Great team player but also can push to the right direction when needed</p>
+                 <p>Deep understanding of the web development world</p>
+                 <p>Exceptional researcher</p>
              </div>
              </div>
              <div className="skill-group">
-                 <h2>Back-end</h2>
+                 <h2>Technical Skills</h2>
                  <div className="skill-container">
-                 <p>Node.js</p>
-                 <p>PHP</p>
-                 <p>MongoDB</p>
-                 <p>MySQL</p>
-                 <p>Express.js</p>
+                 <p>Specializing with React & Typescript but also comfortable around all Front-end frameworks</p>
+                 <p>Strong Html, Css, Javascript skills</p>
+                 <p>Familiarity in Back-end enviorment (Node.js, express, mongoDb and many more)</p>
+                 <p>Have background in testing</p>
+                 <p>Have Expirience with large scale projects </p>
                  </div>
              </div>
              <div className="skill-group">
-             <h2>Code Managment</h2>
+             <h2>Extras</h2>
              <div className="skill-container">
-                <p>Git</p>
-                <p>Unit Testing</p>
-                <p>MVC</p>
-                <p>Npm</p>
+                <p>Alot of expirience with git & npm</p>
+                <p>Pixel Perfect developing</p>
+                <p>MVC based order</p>
              </div>
              </div>
              </section>
-             <button onClick={() => window.scrollTo(window.innerWidth, window.innerHeight)} style={{position: 'absolute',top: '50%', left: '20%', width: '300px', zIndex: '9999'}}>To the mainframe</button>
+             <button className="center-btn" onClick={() => window.scrollTo(window.innerWidth, window.innerHeight)} >Continue Exploring</button>
         </div>
     )
 }

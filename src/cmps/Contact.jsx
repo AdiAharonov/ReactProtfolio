@@ -1,4 +1,5 @@
 import React from 'react'
+import { Astroid } from "./StyledCmps/Astroid";
 
 export function Contact() {
     const onClick = () => {
@@ -12,6 +13,7 @@ export function Contact() {
              <p> Currently looking for any new opportunities, my inbox is always open.</p>
              <button onClick={onClick} className="resume-btn">Contact Me</button>
              </div>
+             <Astroid />
         </div>
     )
 }
