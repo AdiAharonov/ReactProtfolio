@@ -1,9 +1,14 @@
 import React from 'react'
+import { BlackHole } from './StyledCmps/BlackHole';
+
 
 export function Skills() {
     return (
         <div className="skills" name="skills">
-             <h2>What i can bring to the table?</h2>
+        <BlackHole w={300} h={300} icons={[]} p={"Proffeciance"}  maxorbit={20}/>
+        
+        
+             {/* <h2>What i can bring to the table?</h2>
              <section className="skill-groups">
              <div className="skill-group">
              <h2>Human Assets</h2>
@@ -33,7 +38,7 @@ export function Skills() {
                 <p>MVC based order</p>
              </div>
              </div>
-             </section>
+             </section> */}
              <button className="center-btn" onClick={() => window.scrollTo(window.innerWidth, window.innerHeight)} >Continue Exploring</button>
         </div>
     )

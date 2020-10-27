@@ -35,13 +35,13 @@ setTimeout(() => setSentence(100), 8000)
 
 }, [])
 
-useScrollPosition(({prevPos, currPos}) => {
-  console.log(prevPos, currPos)
-  if (currPos.x * -1 >= window.innerWidth ) {
-    setActive(true)
-    setAnimation('work3')
-  } 
-})
+// useScrollPosition(({prevPos, currPos}) => {
+//   // console.log(prevPos, currPos)
+//   if (currPos.x * -1 >= window.innerWidth ) {
+//     setActive(true)
+//     setAnimation('work3')
+//   } 
+// })
 
 
   // paralax effect
