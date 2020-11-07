@@ -1,11 +1,11 @@
 import React, { useRef, useEffect, useState } from 'react';
-import Typical from 'react-typical';
 import { useSpring, animated } from 'react-spring'
 import { ReactComponent as Bg } from "../assets/images/2.svg";
 import { ReactComponent as SpaceShip } from "../assets/images/spaceship.svg";
 import { StarsAnimation } from './StyledCmps/StarsAnimation';
-import SvgLines from 'react-mt-svg-lines'; 
-import { useScrollPosition } from '@n8tb1t/use-scroll-position';
+import { ToggleBtn } from '../cmps/StyledCmps/ToggleBtn';
+import { ReactComponent as ArrowBtn } from '../assets/images/arrow-btn.svg';
+
 
 const calc = (x, y) => [x - window.innerWidth / 2, y + window.innerHeight / 2]
 const trans1 = (x, y) => `translate3d(${x / 10}px,${y / 10}px,0)`
@@ -15,91 +15,100 @@ const trans4 = (x, y) => `translate3d(${x / 3.5}px,${y / 3.5}px,0)`
   
 
 
-export function LandingPage() {
+export function LandingPage({setMode, mode}) {
 
 const [header, setHeader] = useState(0);
 const [subHeader, setSubHeader] = useState(0);
 const [content, setContent] = useState(0);
 const [sentence, setSentence] = useState(0);
+const [animations, setAnimations] = useState(0);
 const [active, setActive] = useState(false)
-const [animate, setAnimation] = useState('work')
+
 
 useEffect(() => {
-window.scrollTo(window.innerWidth, window.innerHeight)
+  if (window.innerWidth > 1024) {
+
+    window.scrollTo(window.innerWidth, window.innerHeight)
+  }
 setActive(true)
-setTimeout(() => setHeader(100), 2000)
-setTimeout(() => setSubHeader(100), 4000)
-setTimeout(() => setContent(100), 6000)
-setTimeout(() => setSentence(100), 8000)
+setTimeout(() => setHeader(100), 1000)
+setTimeout(() => setSubHeader(100), 2500)
+setTimeout(() => setContent(100), 3500)
+setTimeout(() => setSentence(100), 4500)
 
 
 }, [])
 
-// useScrollPosition(({prevPos, currPos}) => {
-//   // console.log(prevPos, currPos)
-//   if (currPos.x * -1 >= window.innerWidth ) {
-//     setActive(true)
-//     setAnimation('work3')
-//   } 
-// })
+
+useEffect(() => {
+  if (mode) {
+    setTimeout(() => setAnimations(100), 1500)
+  } else {
+    setTimeout(() => setAnimations(0), 10)
+  }
+}, [mode])
+
 
 
   // paralax effect
 
-  const onClick = () => {
-    window.location.href = `mailto:adi.ahronov@gmail.com`;
-}
+
 
 const [props, set] = useSpring(() => ({ xy: [0, 0], config: { mass: 10, tension: 550, friction: 140 } }))
   return (
-    <div className="landing" onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
+    <div className="landing" onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })} >
+      
+      
       <div className="content" >
 
 
-      <h3 className="name" style={{opacity: header, transition: "opacity 0.6s ease-in"}}>Hello, my name is Adi Aharonov.</h3>
-      <h3 style={{opacity: subHeader, transition: "opacity 0.6s ease-in"}}>Front-end web developer.</h3>
+      <h2 className="name" style={{opacity: header, transition: "opacity 0.6s ease-in"}}>Hello, my name is <span>Adi Aharonov.</span></h2>
+      <h3  style={{opacity: subHeader, transition: "opacity 0.6s ease-in"}}>Front-end web developer.</h3>
       <p className="sentence" style={{opacity: content, transition: "opacity 0.6s ease-in"}}>
-        React + TS  
+        Choose your path:  
       </p>
+      <span style={{opacity: sentence, transition: "opacity 0.6s ease-in"}}><ToggleBtn names={["Clean & Boring", "Space Explorer!"]}  mode={mode} setMode={setMode}/></span>
       </div>
      
      
-     {/* <Typical
-      steps={[" I'm a Full-Stack web developer specializing in building (and occasionally designing) exceptional websites, applications, and everything in between. I like to keep my code", 40000]}
-      wrapper="p"
-     />
-       */}
+   
     
       
      
-     {/*
-      
-      <button onClick={onClick} className="resume-btn">Get In Touch</button> */}
+  
 
       {/* parallax effect*/}
-<div className="animations">
-      <animated.div className="space-ship" style={{ transform: props.xy.interpolate(trans1) }} >     <SpaceShip width={window.innerWidth / 5}/>
-</animated.div>
+{mode && window.innerWidth > 1024 && <div className="animations" style={{opacity: animations, transition: "opacity 0.6s ease-in"}}>
 <StarsAnimation />
       <animated.div className="card2" style={{ transform: props.xy.interpolate(trans2) }} ></animated.div>
       <animated.div className="card3" style={{ transform: props.xy.interpolate(trans3) }} />
       <animated.div className="card4" style={{ transform: props.xy.interpolate(trans4) }} />
-</div>
-{/* <SvgLines animate={ animate } playback={active ? "forwards" : "alternate-reverse"} duration={ 2000 }>
-<Bg stroke={"#b8ffd0"}/>
-</SvgLines> */}
+      <animated.div className="space-ship" style={{ transform: props.xy.interpolate(trans1) }} >     <SpaceShip width={window.innerWidth / 5}/>
+</animated.div>
+</div>}
 
-      {/* <button className="mainframe-btn" style={{top: "50%", left: "10%"}} onClick={() => {
-        setActive(false)
-        setAnimation('work2')
-        setTimeout(() => {
-        window.scrollTo(0, window.innerHeight)
-        }, 2000)}}>About</button> */}
-      <button className="mainframe-btn" style={{top: "50%", left: "5%", transform: "rotate(-90deg)"}} onClick={() => window.scrollTo(0, window.innerHeight)}>About</button>
-      <button className="mainframe-btn" style={{top: "5%", left: "45%"}} onClick={() => window.scrollTo(window.innerWidth, 0)}>Skills</button>
-      <button className="mainframe-btn" style={{right: "5%", top: "50%", transform: "rotate(90deg)"}} onClick={() => window.scrollTo(window.innerWidth * 2, window.innerHeight)}>Work</button>
-      <button className="mainframe-btn" style={{left: "45%", bottom: "5%"}} onClick={() => window.scrollTo(window.innerWidth, window.innerHeight * 2)}>Contact</button>
+        
+
+        <div className="left" onClick={() => window.scrollTo(0, window.innerHeight)}>
+        <ArrowBtn fill={mode ? "#fff" : "#222"} />
+        <button  className="main-page-btn " style={mode ? {color: "#fff", transform: "rotate(-90deg)"} : {color: "#222", transform: "rotate(-90deg)"}} >About</button>
+
+        </div>
+        <div className="top" onClick={() => window.scrollTo(window.innerWidth, 0)}>
+        <ArrowBtn fill={mode ? "#fff" : "#222"}/>
+      <button className="main-page-btn top" style={mode ? {color: "#fff"} : {color: "#222"}} >Skills</button>
+        </div>
+        <div className="right" onClick={() => window.scrollTo(window.innerWidth * 2, window.innerHeight)}>
+      <button className="main-page-btn right" style={mode ? {color: "#fff", transform: "rotate(90deg)"} : {color: "#222", transform: "rotate(90deg)"}} >Work</button>
+        <ArrowBtn fill={mode ? "#fff" : "#222"} />
+        </div>
+        <div className="bottom" onClick={() => window.scrollTo(window.innerWidth, window.innerHeight * 2)}>
+      <button className="main-page-btn bottom" style={mode ? {color: "#fff"} : {color: "#222"}} >Contact</button>
+        <ArrowBtn  fill={mode ? "#fff" : "#222"}/>
+        </div>
+
      
+        
     </div>
   );
 }

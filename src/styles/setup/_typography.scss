@@ -1,16 +1,23 @@
 @font-face {
-    font-family: noto-reg;
-    src: url(../../assets/fonts/NotoSansJP-Regular.otf);
+    font-family: ibm-reg;
+    src: url(../../assets/fonts/IBM-Regular.ttf);
 }
 @font-face {
-    font-family: noto-bld;
-    src: url(../../assets/fonts/NotoSansJP-Bold.otf);
+    font-family: obm-bld;
+    src: url(../../assets/fonts/IBM-Bold.ttf);
 }
 @font-face {
-    font-family: roboto-mono;
-    src: url(../../assets/fonts/RobotoMono-Regular.ttf);
+    font-family: space;
+    src: url(../../assets/fonts/space.ttf);
 }
 @font-face {
-    font-family: lcd;
-    src: url(../../assets/fonts/LcdSolid-VPzB.ttf);
+    font-family: clean;
+    src: url(../../assets/fonts/clean.ttf);
+}
+
+.clean {
+    font-family: clean;
+}
+.space {
+    font-family: space;
 }

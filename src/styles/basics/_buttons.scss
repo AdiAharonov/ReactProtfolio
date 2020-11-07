@@ -1,7 +1,7 @@
 .navbar-btn {
     background: none;
     border: none;
-    color: $clr4;
+ 
     cursor: pointer;
     font-family: roboto-mono;
     font-size: 0.8rem;
@@ -11,55 +11,166 @@
     margin: auto 0;
 
     &:hover {
-        color: $clr3;
+        
     }
 }
 
-.resume-btn {
-    background: none;
-    border: 1px solid $clr3;
-    color: $clr3;
-    padding: 10px 15px;
-    border-radius: 3px;
-    cursor: pointer;
-    font-family: roboto-mono;
-    transition: all ease-in-out .2s;
-    outline: none;
-    text-decoration: none;
 
-    &:hover {
-        background-color: transparentize($clr3, 0.9);
-        @include hover-supported
-    }
-    
-
-    .landing & {
-        padding: 17px;
-    }
-
-}
  
-.mainframe-btn {
-    font-family: lcd;
+.main-page-btn {
+    font-family: clean;
+    font-weight: bold;
     background: none;
     border: none;
     z-index: 9999;
-    color: #B3C0C9;
+   width: auto;
     font-size: rem(22px);
-    position: absolute;
+    
     outline: none;
     cursor: pointer;
     
 }
 
-.center-btn {
-    font-family: lcd;
-    background: none;
-    border: none;
+
+.toggle-btn {
+    width: 100%;
+    padding: rem(10px);
+    
+    
+    overflow: hidden;
+    display: flex;
     z-index: 9999;
-    color: #B3C0C9;
-    font-size: rem(22px);
-    position: absolute;
-    outline: none;
-    cursor: pointer;
+    align-items: center;
+    justify-content: space-around;
+
+    
+    .clean-option ,.space-option {
+        width: 50%;
+        
+
+        h4 {
+            margin: 0;
+            cursor: pointer;
+            font-size: rem(24px);
+            
+        }
+
+        .border {
+            width: 100%;
+            height: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .space {
+            color: $main;
+        }
+    }
+
+    &.light {
+       
+        .clean-option:hover,.space-option:hover {
+          .border {
+            .right {
+                height: 1px;
+                animation: drawRight 2s;
+                // border-bottom: solid 1px $dark-bg;
+                width: 50%;
+            }
+            .left {
+                height: 1px;
+                animation: drawLeft 2s;
+                // border-bottom: solid 1px $dark-bg;
+                width: 50%;
+            }
+          }  
+        }
+
+        .space-option:hover {
+            .border {
+                .right {
+                    border-bottom: solid 1px $main;
+            }
+        }
+    }
+        .clean-option:hover {
+            .border {
+                .right {
+                    border-bottom: solid 1px $dark-bg;
+            }
+        }
+        }
+}
+    &.dark {
+        .clean-option:hover,.space-option:hover {
+            .border {
+              .right {
+                  height: 1px;
+                  animation: drawRight 2s;
+                  // border-bottom: solid 1px $dark-bg;
+                  width: 50%;
+              }
+              .left {
+                  height: 1px;
+                  animation: drawLeft 2s;
+                  // border-bottom: solid 1px $dark-bg;
+                  width: 50%;
+              }
+            }  
+          }
+  
+          .space-option:hover {
+              .border {
+                  .right {
+                      border-bottom: solid 1px $main;
+              }
+          }
+      }
+          .clean-option:hover {
+              .border {
+                  .right {
+                      border-bottom: solid 1px $light-bg;
+              }
+          }
+          }
+    }
+
+    span {
+        position: absolute;
+        
+       
+        margin: auto 0;
+        cursor: pointer;
+        
+    }
+    .light {
+        
+        color: $light-bg;
+        
+    }
+    .dark {
+        
+        color: $dark-bg;
+    }
+}
+
+@keyframes drawRight {
+    from {
+        width: 0;
+        
+    }
+    to {
+        width: 50%;
+        
+    }
+}
+@keyframes drawLeft {
+    from {
+        width: 0;
+        
+    }
+    to {
+        width: -50%;
+        
+    }
 }

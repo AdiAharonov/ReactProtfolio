@@ -1,19 +1,26 @@
 import React from 'react'
 import { Astroid } from "./StyledCmps/Astroid";
+import { ReactComponent as ArrowBtn } from '../assets/images/arrow-btn.svg';
 
-export function Contact() {
+
+export function Contact({mode}) {
     const onClick = () => {
         window.location.href = `mailto:adi.ahronov@gmail.com`;
     }
     return (
-        <div className="contact" name="contact">
-             <button onClick={() => window.scrollTo(window.innerWidth, window.innerHeight)} style={{position: 'absolute',top: '50%', left: '20%', width: '300px', zIndex: '9999'}}>To the mainframe</button>
-             <h3><span className="clr3">04. </span>Get In Touch!</h3>
+        <div className="contact">
+             <div className="center-btn">
+            <ArrowBtn fill={mode ? "#fff" : "#222"}/>
+    <button  style={mode ? {color: "#fff"} : {color: "#222"}} onClick={() => window.scrollTo(window.innerWidth, window.innerHeight)}>{mode ? "Explore" : "Back"}</button>
+            </div>
+
+            <h2 className="header">Wanna get in touch?</h2>
+             
              <div className="contact-content">
-             <p> Currently looking for any new opportunities, my inbox is always open.</p>
-             <button onClick={onClick} className="resume-btn">Contact Me</button>
+             <p> Always looking for great opportunities or a nice chat so feel free to contact me any time!</p>
              </div>
-             <Astroid />
+             <button  onClick={onClick} className="contact-btn">Contact Me</button>
+            {mode && window.innerWidth > 1024 && <Astroid />} 
         </div>
     )
 }

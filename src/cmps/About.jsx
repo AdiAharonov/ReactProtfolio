@@ -2,8 +2,9 @@ import React, {useState} from 'react'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import RealImage  from "../assets/images/about/real.png";
 import AnimatedImage  from "../assets/images/about/animated.png";
+import { ReactComponent as ArrowBtn } from '../assets/images/arrow-btn.svg';
 
-export  function About() {
+export  function About({mode}) {
     
 
 
@@ -16,25 +17,34 @@ export  function About() {
           {/* <img className="my-image" src={FormalImage} alt="formal" /> */}
 
           
+        {mode &&
+        <div className="img-container">
+        <img className="real-img" src={RealImage} alt="" />
+        <img className="animated-img" src={AnimatedImage} alt="" />
+        </div>
+         }
+        {!mode && <div className="img-container">
+          <img className="" src={RealImage} alt="" />
+        </div>
+        }
+          
+           <div className="header-area">
+           <h3 className="header">Who is this guy?</h3>
+           <h4 className="motto"> <span>"Just tell me what you want, I'll find the best way to do it."</span></h4>
+           </div>
 
-          <div className="img-container">
-          <img className="real-img" src={RealImage} alt="" />
-          <img className="animated-img" src={AnimatedImage} alt="" />
-          </div>
-           
            <div className="content">
-           <h3>Who is this guy?</h3>
-           <h4>My motto: <span>"Just tell me what you want, I'll find the best way to do it."</span></h4>
-            <p>Front-end Web Developer with proficiency in writing single-page-applications using the latest WEB technologies (Specialist in react, but familiar with angular and vue as well).
-Coding Academy - 640 hours of an intensive coding bootcamp that qualifies Full-Stack developers. 1+ years experience working with JavaScript Html Css (open source projects). 
-
-Highly motivated tech enthusiast, Active in various web developing communities. 
-Always up to date with the latest technologies. Passionate about writing clean and reusable code and experience with testing.
+            <p>Passionate freelance web developer with a strong appeal to the front-end side of the web.
+I enjoy building amazing websites and rich interactive web apps,
+especially with react and typescript.
 
             </p>
             </div>
 
-            <button className="center-btn" onClick={() => window.scrollTo(window.innerWidth, window.innerHeight)}>Continue Exploring</button>
+            <div className="center-btn">
+    <button  style={mode ? {color: "#fff", transform: "rotate(90deg)"} : {color: "#222", transform: "rotate(90deg)"}} onClick={() => window.scrollTo(window.innerWidth, window.innerHeight)}>{mode ? "Explore" : "Back"}</button>
+            <ArrowBtn fill={mode ? "#fff" : "#222"}/>
+            </div>
             
         </div>
     )

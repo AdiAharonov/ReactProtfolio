@@ -1,9 +1,20 @@
 .contact {
-  position: relative;
-  top: -100vh;
+  position: absolute;
+  top: 200vh;
   left: 100vw;
   width: 100vw;
   height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 0.5fr 0.5fr 1fr 0.5fr 2fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". btn ."
+    ". header ."
+    ". content ."
+    ". contact-btn ."
+    ". . .";
 
 
 
@@ -12,7 +23,7 @@
         height: 100%;
         position: absolute;
         top: 0;
-        z-index: 20;
+        z-index: 30;
         svg {
             width: 30%;
             position: absolute;
@@ -20,33 +31,90 @@
         }
     }
   
-    span {
-      font-family: roboto-mono;
-    }
+    .center-btn {
+      grid-area: btn;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      button {
+        z-index: 31;
+          font-size: rem(18px);
+          background: none;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          
+      }
+
+      svg {
+          transform: rotate(180deg);
+      }
+  }
   
-    // h3 {
-    //   &::after {
-    //     content: '';
-    //     display: inline-block;
-    //     width: 300px;
-    //     height: 1px;
-    //     margin: 5px 15px;
-    //     background-color: transparentize($clr3, 0.7);
-    //   }
-    // }
+    .header {
+      grid-area: header;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: rem(46px);
+      color:$main;
+    }
     .contact-content {
       position: absolute;
-        text-align: center;
-        
-        button {
-            margin: 50px auto;
-        }
-    }
+      text-align: center;
+       grid-area: content; 
+       
+       font-weight: 600;
+       font-size: rem(24px);
+       
+      }
+          .contact-btn {
+            grid-area: contact-btn;
+            max-width: 200px;
+            margin: 0 auto;
+            z-index: 31;
+             font-size: rem(24px);
+             background: repeating-linear-gradient(
+  45deg,
+  transparentize($main, 0.6),
+  transparentize($main, 0.6) 10px,
+  transparentize($main, 0.7) 10px,
+  transparentize($main, 0.7) 20px
+);
+             color:#fff;
+             border: none;
+             outline: none;
+             cursor: pointer;
+             box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+          }
 
     @include for-narrow-layout {
-      // padding: 100px 50px;
-      // text-align: center;
-      // margin: 0;
+      position: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .contact-content {
+        p {
+          text-align: center;
+         height: 50%;
+         width: 80%;
+        line-height: 35px;
+        margin: 0 auto;
+        font-size: rem(26px);
+        
+        }
+      }
+
+      .contact-btn {
+        padding: 15px;
+      }
+
+      .center-btn {
+        display: none;
+      }
     }
     
 }

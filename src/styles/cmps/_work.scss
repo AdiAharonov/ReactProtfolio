@@ -3,99 +3,123 @@
   top: 100vh;
   left: 200vw;
   width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  padding: 0 !important;
 
-  span {
-    font-family: roboto-mono;
-  }
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 1fr 2fr 2fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". header ."
+    ". proj1 ."
+    ". proj2 .";
+   
 
-  h3 {
-    &::after {
-      content: '';
-      display: inline-block;
-      width: 300px;
-      height: 1px;
-      margin: 5px 15px;
-      background-color: transparentize($clr3, 0.7);
+    h3 {
+      grid-area: header;
+      font-size: rem(46px);
+      text-align: center;
+      margin: 20px 0;
+      color:$main;
     }
-  }
 
-  a {
-    width: 300px;
-    height: 350px;
-    background-image: url('../../assets/images/venyou.PNG');
-    background-position: center;
-    background-size: cover;
-    border-radius: 3px;
-    
-    
-    .proj-image {
-      background-color: transparentize(darken($clr3, 20), 0.7);
-      width: 100%;
-      height: 100%;
-      transition: all ease-in 0.3s;
-      &:hover {
-        background-color: transparentize(darken($clr3, 20), 1);
-      }
-    }
-  }
-
-
-  .proj {
-    display: flex;
-    margin-top: 50px;
-    justify-content: space-around;
-    
-    .proj-info {
-
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-
-      p {
-        background-color: lighten($clr1, 5);
-        color: $clr4;
-        border-radius: 3px;
-        padding: 10px;
+    .center-btn {
+      position: absolute;
+      top: 48%;
+      left: -15%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      button {
+          font-size: rem(18px);
+          background: none;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          transform: rotate(90deg);
+          
       }
 
-      .proj-tech {
-          display: flex;
-          h4 {
-              font-family: roboto-mono;
-              padding: 0 20px;
-          }
+      svg {
+          transform: rotate(90deg);
       }
-    }
   }
+
+
+
+  .proj1 {
+    grid-area: proj1;
+
+    
+  }
+  .proj2 {
+    grid-area: proj2;
+  }
+  
+
+  
 
   @include for-narrow-layout {
-    padding: 100px 50px;
-    text-align: center;
-    margin: 0;
-
-    .proj {
-      display: flex;
-      flex-direction: column;
-
-      .proj-info {
-
-        p {
-          max-width: 100%;
-          text-align: left;
-        }
-
-        .proj-tech {
-          align-items: center;
-          justify-content: space-around;
-          padding: 30px 0;
-        }
-
-      }
+    position: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    .center-btn {
+      display: none;
     }
 
-    a {
+    h3 {
+      font-size: rem(26px);
+      margin: 0;
+    }
+
+    .proj1,.proj2 {
+      height: 30%;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .proj1,.proj2 {
+      width: 90% !important;
+      height: 40%;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .proj1,.proj2 {
+      width: 40%;
+      height: 35%;
+      margin: 0 auto;
+    }
+  }
+  @media (max-width: 775px) {
+    .proj1,.proj2 {
+      width: 50%;
+      height: 30%;
+      margin: 0 auto;
+    }
+  }
+  @media (max-width: 625px) {
+    .proj1,.proj2 {
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 350px) {
+    h3 {
+      font-size: rem(22px);
+      
+    }
+    .proj1,.proj2 {
+      height: 25%;
       width: 100%;
-      display: block;
     }
+
+  
   }
 }

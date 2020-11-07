@@ -1,10 +1,14 @@
 import React from 'react'
+import { Card } from '../cmps/StyledCmps/Card';
+import VenyouGif from '../assets/images/work/venyou.gif';
+import bitcoinGif from '../assets/images/work/bitcoin.gif';
+import { ReactComponent as ArrowBtn } from '../assets/images/arrow-btn.svg';
 
-export function Work() {
+export function Work({mode}) {
     return (
-        <div className="work" name="work">
-             <h3><span className="clr3">03. </span>Some Things I've Built</h3>
-             <div className="proj">
+        <div className="work main-container">
+             <h3>Some things i've made</h3>
+             {/* <div className="proj">
                  <div className="proj-info">
                  <h2>Venyou</h2>
                  <p>Inspired by Meetup, a full-scale marketplace web application.
@@ -29,10 +33,15 @@ and many more features
                  </div>
                  </div>
                  <a href="https://venyouformisterbit.herokuapp.com/"><div className="proj-image"></div></a>
-             </div>
-             <div className="proj"></div>
-             <div className="proj"></div>
-             <button onClick={() => window.scrollTo(window.innerWidth, window.innerHeight)} style={{position: 'absolute',top: '50%', left: '20%', width: '300px', zIndex: '9999'}}>To the mainframe</button>
+             </div> */}
+             <div className="proj1">             <Card mode={mode} src={"https://venyouformisterbit.herokuapp.com/"} reg={true} gif={VenyouGif} header={"Venyou"} tech={["MongoDB", "Express", "React.js", "Node.js"]} content={"Inspired by Meetup, a full-scale marketplace web application. based on MERN (MongoDB / Express / React / Node.js), includes: Sign in with Facebook/Google, Socket for live comments, Notification system, Google MAPS, and many more features "}/>
+</div>
+             <div className="proj2"><Card mode={mode} src={"https://adiaharonov.github.io/Mr.BitCoin/"} reg={false} gif={bitcoinGif} header={"Mr.Bitcoin"} tech={["Angular", "TypeScript", "RxJs", "Fetch API"]} content={" A quite simple and lovely bitcoin managing app, just an example where I used angular and ts. Includes localstorage for login system & async api requests."}/></div>
+             <div className="center-btn">
+            <ArrowBtn fill={mode ? "#fff" : "#222"}/>
+    <button  style={mode ? {color: "#fff", transform: "rotate(-90deg)"} : {color: "#222", transform: "rotate(-90deg)"}} onClick={() => window.scrollTo(window.innerWidth, window.innerHeight)}>{mode ? "Explore" : "Back"}</button>
+            </div>
+            
         </div>
     )
 }

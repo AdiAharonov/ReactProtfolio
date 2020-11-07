@@ -2,7 +2,7 @@ import React from 'react'
 
 export const SpaceBgSvg = () => {
     return (
-        <div className="space-bg">
+        <>
             <div className="comet-rain">
 {/*<!-- symbol definition -->*/}
 	<svg role="presentation" id="svg-comet" className="svg-defs" data-name="comet" viewBox="0 0 195 173.05" width="195" height="173.05">
@@ -118,6 +118,6 @@ export const SpaceBgSvg = () => {
 	
 	</div>
 </div>
-        </div>
+        </>
     )
 }

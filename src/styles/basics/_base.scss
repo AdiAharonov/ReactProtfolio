@@ -3,16 +3,22 @@
 }
 
 html {
-    color: $clr2;
+   
     line-height: 1.5em;
     text-align: center;
-    font-family: noto-reg;
+    font-family: clean;
     scroll-behavior: smooth;
     
 }
 
 body {
     margin: 0;
+    overflow: hidden;
+
+    @include for-narrow-layout {
+
+        overflow: auto;
+    }
 }
 
 img {
@@ -20,7 +26,7 @@ img {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: noto-bld;
+    font-family: clean;
     line-height: 1.2em;
     margin: 0 0 rem(20px);
     
@@ -31,6 +37,7 @@ h1 {
 }
 
 p {
-    margin: 0 0 rem(20px);
-    max-width: 60ch;
+   
+    font-family: clean;
+    
 }

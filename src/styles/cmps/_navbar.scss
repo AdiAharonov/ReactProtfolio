@@ -1,6 +1,5 @@
 .navbar {
-  background-color: $clr1;
-  display: flex;
+  display: none;
   width: 100%;
   height: 90px;
   justify-content: space-between;
@@ -8,7 +7,7 @@
   padding: 0 40px;
   position: fixed;
   top: 0;
-  z-index: 10;
+  z-index: 9999;
 
   .logo {
     width: 50px;
@@ -16,7 +15,7 @@
   }
 
   .navbar-num {
-    color: $clr3;
+
   }
 
   .navbar-content-box {
@@ -26,10 +25,13 @@
   }
 
   @include for-narrow-layout {
-
+    overflow-x: hidden;
     background: none !important;
     border: none !important;
     direction: rtl;
+    display: flex;
+    position: absolute;
+    
     
     img {
       display: none;
@@ -38,7 +40,7 @@
     .navbar-content-box {
       flex-direction: column;
       justify-content: space-around;
-      position: absolute;
+      position: fixed;
       height: 100vh;
       top: 0;
       right: 0;
@@ -46,9 +48,8 @@
       min-width: 200px;
       padding-top: 80px;
       direction: ltr;
-      background-color: darken($clr1, 3);
       transition: all ease-in 0.4s;
-
+      background-color: lighten($main, 50);
       
 
       a {
@@ -63,6 +64,7 @@
     }
 
     .close {
+      
         transform: translateX(100%);
     }
 
@@ -72,7 +74,9 @@
 
 
     .hamburger {
-        position: relative;
+        position: fixed;
+        top: 5%;
+
         width: 35px;
         height: 35px;
         z-index: 9999;
@@ -81,13 +85,17 @@
         div {
           width: 100%;
           height: 5px;
-          background-color: $clr4;
           margin: 6px 0;
           transition: 0.4s;
           border-radius: 2px;
         }
+
+        .bar1,.bar2,.bar3 {
+          background-color: $main;
+        }
     }   
          .change .bar1 {
+           
           -webkit-transform: rotate(-45deg) translate(-9px, 6px);
           transform: rotate(-45deg) translate(-10px, 7px);
         }

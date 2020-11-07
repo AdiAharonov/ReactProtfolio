@@ -1,64 +1,172 @@
 .skills {
-    
+    z-index: 10;
     position: absolute;
     top: 0;
     left: 100vw;
     width: 100vw;
     height: 100vh;
-    color: #fff;
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 2fr 2fr 0.5fr;
+    grid-template-rows: 1fr 2fr 0.5fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      ". header header header ."
+      ". left middle right ."
+      ". . footer . .";
+   
+
+
 
  .center-btn {
-        position: absolute;
-        left: 38%;
-        bottom: 5%;
+        grid-area: footer;
+      
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            
+            button {
+                font-size: rem(18px);
+                background: none;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                z-index: 30;
+                
+            }
+    
+            svg {
+                
+            }
+        
     }
 
     
 
 
-    span {
-        font-family: roboto-mono;
+    .header {
+        grid-area: header;
+
+        h2 {
+            font-size: rem(46px);
+            margin: 2rem;
+            color:$main;
+        }
+
+        p {
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 2rem;
+            text-align: left;
+        }
+    }
+
+    .skill {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 80%;
+        font-size: rem(24px);
+        color: #9475a3;
+    }
+
+    .left {
+        grid-area: left;
+    }
+    .middle {
+        grid-area: middle;
+        border-left: 1px solid #E9B9FF;
+        border-right: 1px solid #E9B9FF;
+        
+    }
+    .right {
+        grid-area: right;
     }
 
 
-    // .skill-groups {
-    //     display: flex;
-    //     justify-content: space-around;
-    //     width: 100%;
-    //     height: 60%;
-        
+   
 
-    //     .skill-group {
-            
-    //         h2 {
-    //             color: $clr4;
-    //             width: 100%;
-    //             text-align: center;
-    //         }
-    //         width: 100%;
-            
-            
-    //         .skill-container {
-    //            text-align: center;
-    //            width:100%;
-    //            height: 100%;
-    //             display: flex;
-    //             flex-direction: column;
-    //             justify-content: space-around;
+    @include for-narrow-layout {
+        position: inherit;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
 
-    //             p {
-    //                 padding: 10px;
-    //                 color: #fff;
-    //                 margin: 0;
-    //             }
-    //         }
+        .header {
             
-    //     }
-    // }
+            h2 {
+                font-size: rem(30px);
+                margin: 15px 0;
+            }
 
-    // @include for-narrow-layout {
-    //     padding: 100px 50px;
-    //     margin: 0;
-    //     text-align: center;
-    //   }
+            p {
+                font-size: rem(14px);
+                width: 80%;
+                margin: 10px auto;
+                text-align: center;
+            }
+        }
+
+        .skill {
+            height: 15%;
+            font-size: rem(16px);
+        }
+
+        .center-btn {
+            display: none;
+        }
+        .middle {
+            margin: 0 auto;
+            border-left: 0;
+            border-right: 0;
+            border-top: 1px solid #E9B9FF;
+            border-bottom: 1px solid #E9B9FF;
+        }
+
+      }
+      @media (max-width: 350px) {
+        .header {
+            
+            h2 {
+                font-size: rem(24px);
+                margin: 15px 0;
+            }
+
+            p {
+                font-size: rem(12px);
+                line-height: 20px;
+                width: 80%;
+                margin: 10px auto;
+                text-align: center;
+            }
+        }
+
+       
+
+      }
+      @media (min-width: 600px) {
+
+        display: grid;
+          .header {
+              p{
+                  font-size: rem(18px);
+              }
+          }
+          
+          .skill {
+              width: 100%;
+              height: 100%;
+          }
+          .middle {
+            
+           
+            border-top: 0;
+            border-bottom: 0;
+            border-left: 1px solid #E9B9FF;
+            border-right: 1px solid #E9B9FF;
+        }
+      }
 }

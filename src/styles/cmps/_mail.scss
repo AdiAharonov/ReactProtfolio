@@ -18,7 +18,7 @@
 
         &:hover {
             margin: -5px;
-            color: $clr3;
+           
         }
     }
 
@@ -27,7 +27,6 @@
         width: 1px;
         height: 100px;
         margin: auto auto 0;
-        background-color: $clr2;
     }
 
     @include for-narrow-layout {
